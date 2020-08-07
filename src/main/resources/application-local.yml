@@ -1,0 +1,30 @@
+### Postgresql
+spring:
+  datasource:
+    url: jdbc:p6spy:postgresql://localhost:5432/demo
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    username: stoneberg
+    password: new1234@
+
+    hikari:
+      connection-timeout: 60000
+      minimum-idle: 3
+      maximum-pool-size: 5
+
+  jpa:
+    hibernate.ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate.default_batch_fetch_size: 500
+      hibernate.jdbc.lob.non_contextual_creation: true
+
+security:
+  oauth2:
+#    client:
+#      client-id: testClientId
+#      client-secret: testSecret
+#    resource:
+#      token-info-uri: http://localhost:8081/oauth/check_token
+
+    jwt:
+      signkey: 123@#$
